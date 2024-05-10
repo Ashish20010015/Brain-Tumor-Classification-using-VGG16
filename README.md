@@ -9,6 +9,7 @@ Brain tumor detection project uses the below libraries and frameworks:
 Python, TensorFlow, Keras, Numpy, Scikit-learn, Matplotlib, OpenCV
 
 **Steps to Develop Brain Tumor Classifier**
+
 Our approach to building the classifier is discussed in the steps:
 
 1. Perform Exploratory Data Analysis (EDA) on brain tumor dataset
@@ -16,6 +17,7 @@ Our approach to building the classifier is discussed in the steps:
 3. Train and Evaluate our model on the dataset
 
 **Step 1. Perform Exploratory Data Analysis (EDA)**
+
 The brain tumor dataset contains 2 folders “no” and “yes” with 98 and 155 images each. Load the folders containing the images to our current working directory. Using the imutils module, we extract the paths for all the images and store them in a list called **image_paths**.
 
 Now, I iterate over each of the paths and extract the directory name (no or yes in our case which acts as the label), and resize the image size to **224×224 pixels**. The **imread()** function of the **cv2** module converts brain tumor images to pixel information.
@@ -25,6 +27,7 @@ As you can see, we have stored the image and its respective label in lists. But 
 let’s split the dataset into training and testing sets in the ratio of **9-1** using the **train_test_split()** function in the **Scikit-learn package**.
 
 **Step 2: Build a CNN Model**
+
 A Convolutional Neural Network or CNN for short is a deep neural network widely used for analyzing visual images. These types of networks work well for tasks like image classification and detection, image segmentation. There are 2 main parts of a CNN:
 
 1. A convolutional layer that does the job of feature extraction
@@ -40,6 +43,7 @@ we are using the **VGG16 state-of-the-art network model**. There are a number of
 Now build the model and compile it using the **Adam as optimizer** with a **learning rate of 0.001** and **accuracy as metric**. As we are building a binary classifier and the input is an image, **binary cross entropy** is used as a **loss function**.
 
 **Step 3: Train and evaluate the model**
+
 The model is trained on **10 epochs** (full iterations) with train_steps for training set and validation_steps for validation set in each epoch. The **batch size** for each epoch is taken as **8**.
 
 
